@@ -3,14 +3,16 @@ import axios from "axios";
 import Header from "./components/Header";
 import PhotoOfDay from "./components/PhotoOfDay";
 import Footer from "./components/Footer";
+import DatePicker from "react-datepicker";
 import "./App.css";
-
+import "react-datepicker/dist/react-datepicker.css";
 const App = () => {
   const [photo, setPhoto] = useState();
   const [photoTitle, setPhotoTitle] = useState();
   const [date, SetDate] = useState();
   const [copyright, SetCopyright] = useState();
   const [explanation, SetExplanation] = useState();
+  const [newDate, setNewDate] = useState(new Date());
 
   useEffect(() => {
     axios
@@ -30,6 +32,10 @@ const App = () => {
       });
   }, [photo]);
 
+  const handleChange = (date) => {
+    setNewDate(date);
+  };
+
   return (
     <div className="App">
       <Header />
@@ -42,6 +48,8 @@ const App = () => {
         date={date}
         copyright={copyright}
       />
+
+      <DatePicker selected={newDate} onChange={handleChange} />
 
       <Footer />
     </div>

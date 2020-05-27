@@ -14,9 +14,27 @@ const PhotoOfDay = (props) => {
     return (
       <div>
         <h2>{props.title}</h2>
-        <img src={props.src} alt={props.alt} />
+        <div
+          style={{
+            width: "100vw",
+            height: 560,
+            overflow: "hidden",
+            backgroundImage: `url(${props.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {/* <img src={props.src} alt={props.alt} style={{width: "100%"}} /> */}
+        </div>
         <p>{`Explanation: ${props.explanation}`}</p>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "64vw",
+            margin: "0 auto",
+          }}
+        >
           <p>{`Date: ${props.date}`}</p>
           <p>{`Copyright: ${props.copyright}`}</p>
         </div>
