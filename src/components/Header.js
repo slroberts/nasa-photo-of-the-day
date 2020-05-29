@@ -1,9 +1,21 @@
 import React from "react";
+import {Navbar, NavbarBrand, Container, Row, Col} from "reactstrap";
+import styled from "styled-components";
 
 const Header = () => {
+  const Heading = styled.h1`
+    font-size: 1.7rem;
+    text-align: center;
+  `;
+
   return (
-    <div>
-      <h1>
+    <Navbar color="light" light expand="md">
+      {/* <NavbarBrand>
+        {" "}
+        <Container>
+          <Row>
+            <Col sm="12" md={{size: 6, offset: 3}}> */}
+      <Heading>
         <span role="img" aria-label="astronaut">
           👨‍🚀
         </span>{" "}
@@ -15,8 +27,12 @@ const Header = () => {
           📷
         </span>{" "}
         of the day
-      </h1>
-    </div>
+      </Heading>
+      {/* </Col>
+          </Row>
+        </Container>
+      </NavbarBrand> */}
+    </Navbar>
   );
 };
 
